@@ -20,5 +20,5 @@ const blogSchema = new Schema({
     timestamps:true
 })
 
-const Blog = module('blog',blogSchema)
+const Blog = model('blog',blogSchema)
 module.exports = Blog
