@@ -4,19 +4,24 @@
     <%- include('./partials/head.ejs') %>
     <title>Home page</title>
 </head>
-<body>
+<body style="background-color: rgb(234, 234, 234);">
     <%- include('./partials/nav.ejs') %>
-    <div class="container mt-3">
-        <% blogs.forEach(blog => { %>
-            <div class="card" style="width: 18rem;">
-            <img src="<%= blog.coverImageUrl %>" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title"><%= blog.title %></h5>
-                <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
-            </div>
-            </div>
-       <% }); %>
+    <div style="display: flex; align-items: center; justify-content: space-evenly; ">
+        <div class="container mt-3 row row-cols-3"  width: 100%;">
+            <% blogs.forEach(blog => { %>
+                <div class="col">
+                    <div class="card" style="width: 25rem;">
+                    <img src="<%= blog.coverImageUrl %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= blog.title %></h5>
+                        <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+                    </div>
+                    </div>
+                </div>
+           <% }); %>
+        </div>
     </div>
+    
     <%- include('./partials/scripts.ejs') %>
 </body>
 </html>
