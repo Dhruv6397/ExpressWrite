@@ -20,15 +20,15 @@ const userSchema = new Schema({
     },
     profileImageURL:{
         type:String,
-        default:"/images/default.png"
+        // default:"/images/default.png"
     },
     role:{
         type:String,
         enum:['USER','ADMIN'],
         default:"USER"
     }
-},{timestamps:true})
-
+},{timestamps:true}) 
+ 
 userSchema.pre("save",function(next){
     const user = this;
     if(!user.isModified("password")) return;

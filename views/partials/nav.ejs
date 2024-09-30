@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  bg-dark " data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg  bg-dark " data-bs-theme="dark" style="position: relative;">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">YOUBLOG</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,9 +15,10 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <%= locals.user.email %>
+                <img src="<%= locals.user.profileImageURL %>" style="width: 2em; border-radius: 50%;">
               </a>
               <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/user/<%= locals.user._id %>"><%= locals.user.fullName %></a></li>
                 <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
               </ul>
             </li>

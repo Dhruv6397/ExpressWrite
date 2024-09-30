@@ -6,24 +6,25 @@
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <div class="container mt-4"></div>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Add New Blog</h2>
         <form action="/blog" method="post" enctype="multipart/form-data">
-            <div class="container mb-3">
+            <div class="mb-3">
                 <label for="coverImage" class="form-label">Cover Image</label>
-                <input type="file" class="form-control" id="coverImage" name="coverImage" aria-describedby="title">
-              </div>
-            <div class="container mb-3">
-              <label for="title" class="form-label">Title</label>
-              <input type="text" class="form-control" id="title" name="title" aria-describedby="title">
+                <input type="file" class="form-control" id="coverImage" name="coverImage" aria-describedby="title" required>
             </div>
-            <div class="container mb-3">
-                <label for="body">Body</label>
-                <textarea class="form-control" placeholder="Add content..." id="body" name="body"></textarea>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="title" name="title" aria-describedby="title" required>
             </div>
-            <div class="container mb-3">
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <textarea class="form-control" placeholder="Add content..." id="body" name="body" rows="10" required></textarea>
+            </div>
+            <div class="text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-          </form>
+        </form>
     </div>
     <%- include('./partials/scripts.ejs') %>
 </body>

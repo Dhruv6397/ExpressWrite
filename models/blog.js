@@ -10,12 +10,12 @@ const blogSchema = new Schema({
         required:true
     },
     coverImageUrl:{
-        type:String
+        type:String,
     },
     createdBy:{
         type:Schema.Types.ObjectId,
         ref:"user"
-    }
+    } 
 },{
     timestamps:true
 })

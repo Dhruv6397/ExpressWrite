@@ -2,26 +2,39 @@
 <html lang="en">
 <head>
     <%- include('./partials/head.ejs') %>
-    <title>Home page</title>
+    <title>Home Page</title>
+    <style>
+        body {
+            background-color: rgb(234, 234, 234);
+        }
+        .card {
+            box-shadow: inset 0 -3em 3em rgba(93, 93, 93, 0.3),
+                        0 0 0 2px white,
+                        0.3em 0.3em 1em rgba(44, 43, 43, 0.6);
+            margin: 1rem; /* Adjusted margin for better spacing */
+        }
+    </style>
 </head>
-<body style="background-color: rgb(234, 234, 234);">
+<body>
     <%- include('./partials/nav.ejs') %>
-    <div style="display: flex; align-items: center; justify-content: space-evenly; ">
-        <div class="container mt-3 row row-cols-3"  width: 100%;">
-            <% blogs.forEach(blog => { %>
-                <div class="col">
-                    <div class="card" style="width: 25rem;">
-                    <img src="<%= blog.coverImageUrl %>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><%= blog.title %></h5>
-                        <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div class="container mt-3">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <% blogs.forEach(blog => { %>
+                    <div class="col mb-4"> <!-- Added mb-4 for bottom margin -->
+                        <div class="card">
+                            <img src="<%= blog.coverImageUrl %>" class="card-img-top" alt="Blog Image">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= blog.title %></h5>
+                                <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                </div>
-           <% }); %>
+                <% }); %>
+            </div>
         </div>
     </div>
-    
+
     <%- include('./partials/scripts.ejs') %>
 </body>
 </html>
